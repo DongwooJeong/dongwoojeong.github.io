@@ -10,12 +10,330 @@
 
   gtag('config', 'G-HQSC42MHT1');
 </script>
+
+<style>
+    :root{
+      --bg:#0b0f19;
+      --card:#11182a;
+      --text:#e9eefc;
+      --muted:#aab6da;
+      --line:rgba(255,255,255,.10);
+      --link:#8bb7ff;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(105,141,255,.22), transparent 55%),
+                  radial-gradient(900px 600px at 85% 10%, rgba(145,255,214,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+    /* Top nav */
+    .nav{
+      position: sticky;
+      top:0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,25,.75);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height: 64px;
+      gap: 16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, #8bb7ff, #7dffd5);
+      box-shadow: 0 0 0 4px rgba(139,183,255,.15);
+      flex: 0 0 auto;
+    }
+    .menu{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .menu a{
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: var(--text);
+      opacity:.9;
+    }
+    .menu a:hover{
+      background: rgba(255,255,255,.06);
+      text-decoration:none;
+      opacity:1;
+    }
+
+    /* Hero */
+    header{
+      padding: 70px 0 22px;
+    }
+    .hero{
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+      line-height: 1.15;
+    }
+    .subtitle{
+      margin:0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 70ch;
+    }
+    .chips{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+    }
+    .chip{
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    /* Sections */
+    section{
+      padding: 28px 0;
+    }
+    .section-card{
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    h2{
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+      letter-spacing:.2px;
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      max-width: 85ch;
+    }
+
+    /* Grid cards */
+    .grid{
+      margin-top: 14px;
+      display:grid;
+      gap: 14px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .card{
+      grid-column: span 6;
+      background: rgba(17,24,42,.72);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+    .meta{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .card ul{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      opacity: .92;
+    }
+    .card li{ margin: 4px 0; }
+
+    @media (max-width: 780px){
+      .card{ grid-column: span 12; }
+      header{ padding-top: 48px; }
+    }
+
+    /* Footer */
+    footer{
+      padding: 30px 0 60px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .contact-row{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+    }
+    .btn:hover{
+      background: rgba(255,255,255,.09);
+      text-decoration:none;
+    }
+  </style>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dongwoo Jeong</title>
 </head>
 <body>
-  <h1>Dongwoo Jeong</h1>
-  <p>dd</p>
+  <!-- Top nav -->
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Your Name</span>
+      </div>
+      <nav class="menu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- Hero -->
+    <header>
+      <div class="hero">
+        <h1>Hi, I’m Your Name.</h1>
+        <p class="subtitle">
+          I study information systems and human–AI interaction, focusing on decision-making and socio-technical systems.
+        </p>
+        <div class="chips">
+          <span class="chip">Human–AI</span>
+          <span class="chip">Behavioral Econ</span>
+          <span class="chip">Causal Inference</span>
+          <span class="chip">Blockchain / DeFi</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-card">
+        <h2>About</h2>
+        <p class="lead">
+          Write 3–5 lines about who you are, what you do, and what you’re currently building/reading.
+          Keep it concrete: your program, your research themes, and what this website is for.
+        </p>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research">
+      <div class="section-card">
+        <h2>Research</h2>
+        <p class="lead">
+          Summarize your main research streams in 1–2 sentences each. Below are placeholders you can replace.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Human involvement & algorithm adoption</h3>
+            <p class="meta">Lab experiments • trust • agency costs • adoption behavior</p>
+            <ul>
+              <li>How intervention/control changes trust, cognitive load, and adoption</li>
+              <li>Moderators: need for cognition, domain knowledge</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Blockchain / DeFi ecosystems</h3>
+            <p class="meta">Narratives • governance • decentralization • TVL</p>
+            <ul>
+              <li>How community sensemaking and decentralization relate to project value</li>
+              <li>On-chain + off-chain signals (forums, GitHub, social)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-card">
+        <h2>Projects</h2>
+        <p class="lead">
+          Add 2–6 projects with a one-liner and links. Keep it simple: what it is, what you did, and what’s interesting.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Project title 1</h3>
+            <p class="meta">Python • Stata/R • experiment logs • analysis</p>
+            <ul>
+              <li>One sentence describing the problem and your approach</li>
+              <li><a href="#" target="_blank">GitHub</a> · <a href="#" target="_blank">Write-up</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Project title 2</h3>
+            <p class="meta">Data pipeline • visualization • dashboards</p>
+            <ul>
+              <li>One sentence describing results/impact</li>
+              <li><a href="#" target="_blank">Demo</a> · <a href="#" target="_blank">Code</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-card">
+        <h2>Contact</h2>
+        <p class="lead">
+          Add the links you want people to use. For portfolio sites, GitHub + email + CV PDF가 가장 무난해.
+        </p>
+
+        <div class="contact-row">
+          <a class="btn" href="https://github.com/yourid" target="_blank">GitHub</a>
+          <a class="btn" href="mailto:your@email.com">Email</a>
+          <a class="btn" href="#" target="_blank">CV (PDF)</a>
+        </div> 
+      </div>
+    </section> 
+    
 </body>
 </html>
